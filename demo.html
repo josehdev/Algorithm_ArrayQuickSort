@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Array QuickSort</h2>
+
+<p>Result:</p>
+
+<p id="demo"></p>
+<p id="demo1"></p>
+
+<script>
+var x = 5;
+var y = 6;
+var z = x + y;
+
+let myarray = [3,7,8,5,2,1,9,5,4];
+//let myarray = [3,3];
+
+
+var nleft;
+var nright;
+var nindex= 99;
+
+function swap(i, j) {
+	if (i != j) {
+    	let a = myarray[i];
+        myarray[i] = myarray[j];
+        myarray[j] = a;
+    }
+}
+
+function quickSort(left, right) {
+	if (left < right) {
+		let pivot = myarray[right];
+        let index = left;
+        for (i = left; i < right; i++) {
+        	if (myarray[i] < pivot) {
+            	swap(index,i);
+                index++;
+            }
+        }
+        swap(index, right);
+        quickSort(left,index-1);
+        quickSort(index+1,right);
+		nindex = index;
+}
+    nleft = left;
+    nright = right;
+
+}
+
+
+quickSort(0, myarray.length-1);
+
+document.getElementById("demo").innerHTML = myarray;
+document.getElementById("demo1").innerHTML = `left ${nleft}, right ${nright}, index ${nindex}`;
+
+</script>
+
+
+</body>
+</html>
+
+

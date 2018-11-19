@@ -4,6 +4,8 @@
 
 <h2>JavaScript Array QuickSort</h2>
 
+<p>Starting myarray = [3,7,8,5,2,1,9,5,4]</p>
+	
 <p>Result:</p>
 
 <p id="demo"></p>
@@ -13,6 +15,7 @@
 
 let myarray = [3,7,8,5,2,1,9,5,4];
 
+//flags for debuging
 var nleft;
 var nright;
 var nindex= 99;
@@ -47,6 +50,7 @@ function quickSort(left, right) {
 quickSort(0, myarray.length-1);
 
 document.getElementById("demo").innerHTML = myarray;
+//debugging info
 document.getElementById("demo1").innerHTML = `left ${nleft}, right ${nright}, index ${nindex}`;
 
 </script>
